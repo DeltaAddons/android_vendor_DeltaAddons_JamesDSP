@@ -21,7 +21,13 @@ PRODUCT_SOONG_NAMESPACES += \
    $(JAMESDSP_PATH)
 
 # SEPolicy
-BOARD_VENDOR_SEPOLICY_DIRS += $(JAMESDSP_PATH)/sepolicy/vendor
+ifneq ($(filter sailfish marlin walleye taimen blueline crosshatch sargo bonito flame coral sunfish bramble redfin barbet oriole raven bluejay panther cheetah lynx tangorpro felix shiba husky akita tokay caiman komodo comet tegu frankel blazer mustang, $(LINEAGE_BUILD)),)
+BOARD_VENDOR_SEPOLICY_DIRS += \
+   $(JAMESDSP_PATH)/sepolicy/jamesdsp_pixel
+else
+BOARD_VENDOR_SEPOLICY_DIRS += \
+   $(JAMESDSP_PATH)/sepolicy/jamesdsp
+endif
 
 PRODUCT_PACKAGES += \
     libjamesdsp \
