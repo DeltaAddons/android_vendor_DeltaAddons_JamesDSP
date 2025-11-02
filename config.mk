@@ -32,3 +32,6 @@ endif
 PRODUCT_PACKAGES += \
     libjamesdsp \
     JamesDSPManager
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/app/JamesDSPManager/JamesDSPManager.apk
